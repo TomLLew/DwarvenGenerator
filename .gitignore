@@ -1,6 +1,7 @@
 /venv/*
 /.vscode/*
 /__pycache__/*
-/service2/__pycache__/*
 /service1/__pycache__/*
+/service2/__pycache__/*
+/service3/__pycache__/*
 /application/__pycache__/*
