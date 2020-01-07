@@ -1,8 +1,8 @@
 from flask import render_template, request, redirect, url_for
-from application import app
+from application import frontend
 
 
-@app.route('/')
-@app.route('/home')
+@frontend.route('/')
+@frontend.route('/home')
 def home():
     return render_template('home.html', title='Dwarven Generator')
