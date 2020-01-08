@@ -13,9 +13,9 @@ clan = ["Longbeards", "Firebeards", "Ironfists", "Stonefoots"]
 job = {"clan":"none", "job":"none", "sex":"none"}
 
 @service2.route('/', methods=['GET', 'POST'])
-def random_name():
+def random_job():
     if request.method == 'POST':
-        data = request.form.get('sex')
+        data = request.args.get("sex")
         if data == "Female":
             job["sex"] = data 
             job["job"] = female[random.randint(0, 9)]
@@ -26,6 +26,8 @@ def random_name():
             job["job"] = male[random.randint(0, 9)]
             job["clan"] = clan[random.randint(0 , 3)]
             return job
+     
+    return {"job":"failure"}
 
 
        
