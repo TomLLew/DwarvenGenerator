@@ -17,11 +17,11 @@ name = {"firstname":"none", "lastname":"none"}
 def random_job():
     if request.method == 'POST':
         data = request.form.get("sex")
-        if data == 'female':
+        if data == 'Female':
             name["firstname"] = f_f_name[random.randint(0, 9)]
             name["lastname"] = l_name[random.randint(0, 9)]
             return name
-        elif data == 'male':
+        elif data == 'Male':
             name["firstname"] = m_f_name[random.randint(0, 9)]
             name["lastname"] = l_name[random.randint(0, 9)]
             return name
