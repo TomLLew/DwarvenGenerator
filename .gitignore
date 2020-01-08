@@ -6,3 +6,4 @@
 /service3/__pycache__/*
 /application/__pycache__/*
 /service1/application/__pycache__/*
+/service2/application/__pycache__/*
