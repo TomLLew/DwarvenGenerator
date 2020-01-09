@@ -4,7 +4,7 @@ WORKDIR /app
 
 RUN apk update && apk upgrade
 
-RUN apk install python3-pip 
+RUN apk add python3-pip 
 
 COPY . . 
 
