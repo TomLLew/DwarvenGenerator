@@ -45,20 +45,20 @@ services:
   
   
   
-      '''service1:
-    image: service1
-    container_name: service1
-    build: ./service1
-  service2:
-    image: service2
-    container_name: service2
-    build: ./service2
-  service3:
-    image: service3
-    container_name: service3
-    build: ./service3
-  frontend:
-    image: frontend
-    container_name: frontend
-    build: ./frontend'''
+#      '''service1:
+ #   image: service1
+  #  container_name: service1
+   # build: ./service1
+  #service2:
+   # image: service2
+    #container_name: service2
+#    build: ./service2
+ # service3:
+  #  image: service3
+   # container_name: service3
+    #build: ./service3
+ # frontend:
+  #  image: frontend
+   # container_name: frontend
+    #build: ./frontend'''
 
