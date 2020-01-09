@@ -13,10 +13,10 @@ l_name = ["The Magnificent", "The Protective", "The Hungry", "Boulderstone", "Co
 
 name = {"firstname":"none", "lastname":"none"}
 
-@service1.route('/', methods=['GET', 'POST'])
-def random_job():
+@service1.route('/name', methods=['GET', 'POST'])
+def random_name():
     if request.method == 'POST':
-        data = request.form.get("sex")
+        data = request.args.get("gender")
         if data == 'Female':
             name["firstname"] = f_f_name[random.randint(0, 9)]
             name["lastname"] = l_name[random.randint(0, 9)]

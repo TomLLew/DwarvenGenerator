@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>  
-        <title>{{ title }}</title>    
+        {% block head_content %}
+        {% endblock head_content %}
     </head>
     <br>
     <bod>
         <div align="center">
-                {% block body_content %}
-                {% endblock %}
+            {% block body_content %}
+            {% endblock body_content %}
         </div>
     </body>
 </html>

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block head_content %}
+<title>{{ title }}</title>
+{% endblock head_content %}
+
+{% block body_content %}
+<div>
+    <a href="{{ url_for('home') }}">Generator</a>
+</div>
+<br>
+<h1>Your Character</h1>
+<div>
+    <p><b>First name: </b>{{ data.firstname }}</p>
+    <p><b>Last name: </b>{{ data.lastname }}</p>
+    <p><b>Gender: </b>{{ data.gender }}</p>
+    <p><b>Job: </b>{{ data.job }}</p>
+    <p><b>Clan: </b>{{ data.clan }}</p>
+</div>
+<br>
+<h1>Stats</h1>
+<div>
+    <p><b>Clan Skill: </b>{{ data.clan_skill }}</p>
+    <p><b>Defence: </b>{{ data.Defence }}</p>
+    <p><b>Strength: </b>{{ data.Strength }}</p>
+    <p><b>Speed: </b>{{ data.Speed }}</p>
+    <p><b>Intelligence: </b>{{ data.Intelligence }}</p>
+    <p><b>Luck: </b>{{ data.Luck }}</p>
+</div>
+{% endblock body_content %}
