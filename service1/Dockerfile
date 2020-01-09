@@ -2,14 +2,16 @@ FROM alpine:latest
 
 WORKDIR /app
 
-RUN apk -y update && apk -y upgrade
-
-RUN apk install python3-pip -y
+RUN apk add --update \
+    python \
+    python-dev \
+    py-pip \
+    build-base
 
 COPY . . 
 
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 
 EXPOSE 5001
 
-ENTRYPOINT ["/usr/bin/python3", "app.py"]
+ENTRYPOINT ["/usr/bin/python", "app.py"]
