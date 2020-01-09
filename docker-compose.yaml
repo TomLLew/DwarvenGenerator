@@ -3,20 +3,20 @@ services:
   service1:
     build: 
       context: ./service1/
-      dockerfile: Dockerfile.yaml
+      dockerfile: Dockerfile
   service2: 
     build: 
       context: ./service2/
-      dockerfile: Dockerfile.yaml
+      dockerfile: Dockerfile
   service3:
     build:
       context: ./service3/
-      dockerfile: Dockerfile.yaml
+      dockerfile: Dockerfile
   frontend:
     image: frontend:latest
     build: 
       context: .
-      dockerfile: Dockerfile.yaml
+      dockerfile: Dockerfile
   nginx:
     image: nginx:latest
     container_name: nginx
@@ -28,7 +28,11 @@ services:
     - type: bind
       source: ./nginx.conf
       target: /etc/nginx/nginx.conf
-
+    depends_on: 
+      - service1
+        service2
+        service3
+        frontend
 
 
   
