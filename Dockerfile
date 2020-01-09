@@ -2,9 +2,11 @@ FROM alpine:latest
 
 WORKDIR /app
 
-RUN apk update && apk upgrade
-
-RUN apk add python3-pip 
+RUN apk add --update \
+    python \
+    python-dev \
+    py-pip \
+    build-base
 
 COPY . . 
 
