@@ -12,7 +12,7 @@ def home():
         payload = {"gender":"none"}
         gender = form.gender.data
         payload["gender"] = gender
-        response = requests.post('http://127.0.0.1:5003/stats', params=payload).json()
+        response = requests.post('http://service3:5003/stats', params=payload).json()
         return render_template('character.html', title='Dwarven Character', form=form, data=response)
     if request.method == 'GET':
         return render_template('home.html', title='Dwarven Generator', form=form)
