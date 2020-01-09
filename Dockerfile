@@ -14,4 +14,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE 5000
 
-ENTRYPOINT ["/usr/bin/python3", "app.py"]
+ENTRYPOINT ["/env/bin/python", "app.py"]
