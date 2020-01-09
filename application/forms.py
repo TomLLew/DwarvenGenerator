@@ -5,10 +5,10 @@ from wtforms.validators import DataRequired
 
 class GenderForm(FlaskForm):
     gender = SelectField('Select Gender',
-        choices=[('Female', 'Female'), ('Male', 'Male')],
-        validators=[
-            DataRequired()
-        ]
-    )
+        choices=[
+            ('Female', 'Female'),
+             ('Male', 'Male')
+             ],
+        )
 
     submit = SubmitField('Generate!')

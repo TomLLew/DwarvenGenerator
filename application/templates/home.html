@@ -2,7 +2,7 @@
 {% block body_content %}
     <h1>Dwarven Generator</h1>
     <div class='form'>
-        <form method="POST">
+        <form method="POST" action="{{ url_for('home') }}">
             <div class='form-group'>
                 {{ form.gender.label }}
                 {% if form.gender.errors %}
@@ -12,9 +12,9 @@
                             <span>{{ error }}</span>
                         {% endfor %}
                     </div>
-                    {% else %}
-                        {{ form.gender }}
-                    {% endif %}
+                {% else %}
+                    {{ form.gender }}
+                {% endif %}
             </div>
             <br>
             <div>

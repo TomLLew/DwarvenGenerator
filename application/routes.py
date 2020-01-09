@@ -8,19 +8,15 @@ import requests, json
 @frontend.route('/home', methods=['GET', 'POST'])
 def home():
     form = GenderForm()
-    if form.validate_on_submit():
-        gender = form.gender.text
-
-        return gender
-    return render_template('home.html', title='Dwarven Generator', form=form)
-    '''form = GenderForm()
-    print(form.gender)
-    if form.validate_on_submit():
-        payload = request.form['gender']
-        print(form.gender)
-        stats = {}
-        
+    if request.method == 'POST':
+        payload = {"gender":"none"}
+        gender = form.gender.data
+        payload["gender"] = gender
         response = requests.post('http://127.0.0.1:5003/stats', params=payload).json()
-        stats.update(response)
-        return render_template('home.html', title='Dwarven Generator', form=form)'''
-    return render_template('home.html', title='Dwarven Generator', form=form)
+
+    
+        return response
+    
+        return render_template('home.html', title='Dwarven Generator', form=form, data=response)
+    if request.method == 'GET':
+        return render_template('home.html', title='Dwarven Generator', form=form)
