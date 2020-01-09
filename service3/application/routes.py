@@ -21,28 +21,28 @@ def stat_generator():
                 stats[i]=random.randint(3, 9)
             for key in name, job:
                 stats.update(key)
-            stats["clan_skill"]="Sleight of Hand"
+            stats["clan_skill"]="Quick Shot"
             return stats
         elif clan == "Firebeards":
             for i in stats:
                 stats[i]=random.randint(3, 9)
             for key in name, job:
                 stats.update(key)
-            stats["clan_skill"]="Marksmanship"
+            stats["clan_skill"]="Fire Bomb"
             return stats
         elif clan == "Ironfists":
             for i in stats:
                 stats[i]=random.randint(3, 9)
             for key in name, job:
                 stats.update(key)
-            stats["clan_skill"]="Melee Combat"
+            stats["clan_skill"]="Bash"
             return stats
         elif clan == "Stonefoots":
             for i in stats:
                 stats[i]=random.randint(3, 9)
             for key in name, job:
                 stats.update(key)
-            stats["clan_skill"]="Stamina"
+            stats["clan_skill"]="Sprint"
             return stats
 
         return "failure"

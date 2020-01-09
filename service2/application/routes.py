@@ -10,7 +10,7 @@ male = ["Denerim ('priest')", "Earth-Guide", "Healer", "Leader", "Mage",
 
 clan = ["Longbeards", "Firebeards", "Ironfists", "Stonefoots"]
 
-job = {"clan":"none", "job":"none", "sex":"none"}
+job = {"clan":"none", "job":"none"}
 
 @service2.route('/job', methods=['GET', 'POST'])
 def random_job():
