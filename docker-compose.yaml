@@ -2,7 +2,7 @@ version: '3.7'
 services: 
   nginx:
     image: nginx:latest
-    container_name: ontainer_name: nginx
+    container_name: nginx
     ports: 
     - target: 80
       published: 80
