@@ -2,9 +2,9 @@ FROM alpine:latest
 
 WORKDIR /app
 
-RUN apt-get -y update && apt-get -y upgrade
+RUN apk -y update && apk -y upgrade
 
-RUN apt-get install python3-pip -y
+RUN apk install python3-pip -y
 
 COPY . . 
 
