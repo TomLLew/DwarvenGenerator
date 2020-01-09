@@ -1,0 +1,48 @@
+version: '3.7'
+services: 
+  service1:
+    image: service1:latest
+    build: 
+      context: ./service1/
+      dockerfile: Dockerfile
+  service2:
+    image: service2:latest 
+    build: 
+      context: ./service2/
+      dockerfile: Dockerfile
+  service3:
+    image: service3:latest
+    build:
+      context: ./service3/
+      dockerfile: Dockerfile
+  frontend:
+    image: frontend:latest
+    build: 
+      context: .
+      dockerfile: Dockerfile
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports: 
+    - target: 80
+      published: 80
+      protocol: tcp
+    volumes: 
+    - type: bind
+      source: ./nginx.conf
+      target: /etc/nginx/nginx.conf
+   
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+

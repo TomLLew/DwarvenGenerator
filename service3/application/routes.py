@@ -13,8 +13,8 @@ def stat_generator():
     gender = {"gender": "none"}
     gender["gender"] = form
     if request.method == 'POST':
-        name = requests.post('http://127.0.0.1:5001/name', params=gender).json()
-        job = requests.post('http://127.0.0.1:5002/job', params=gender).json()
+        name = requests.post('http://service1:5001/name', params=gender).json()
+        job = requests.post('http://service2:5002/job', params=gender).json()
         clan = job['clan']
         if clan == "Longbeards":
             for i in stats:
