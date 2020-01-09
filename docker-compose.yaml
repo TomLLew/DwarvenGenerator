@@ -16,22 +16,22 @@ services:
       service2
       service3
       frontend
-    service1:
-      build: 
-        context: ./service1/
-        dockerfile: Dockerfile.yaml
-    service2: 
-      build: 
-        context: ./service2/
-        dockerfile: Dockerfile.yaml
-    service3:
-      build: 
-        context: ./service3/
-        dockerfile: Dockerfile.yaml
-    frontend:
-      build: 
-        context: .
-        dockerfile: Dockerfile.yaml
+  service1:
+    build: 
+      context: ./service1/
+      dockerfile: Dockerfile.yaml
+  service2: 
+    build: 
+      context: ./service2/
+      dockerfile: Dockerfile.yaml
+  service3:
+    build: 
+      context: ./service3/
+      dockerfile: Dockerfile.yaml
+  frontend:
+    build: 
+      context: .
+      dockerfile: Dockerfile.yaml
 
 
   
