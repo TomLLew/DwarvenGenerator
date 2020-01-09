@@ -12,19 +12,19 @@ services:
       source: ./nginx.conf
       target: /etc/nginx/nginx.conf
     depends_on: 
-    - service1
-      service2
-      service3
+    - serv1
+      serv2
+      serv3
       frontend
-  service1:
+  serv1:
     build: 
       context: ./service1/
       dockerfile: Dockerfile.yaml
-  service2: 
+  serv2: 
     build: 
       context: ./service2/
       dockerfile: Dockerfile.yaml
-  service3:
+  servS3:
     build: 
       context: ./service3/
       dockerfile: Dockerfile.yaml
