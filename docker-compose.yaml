@@ -9,10 +9,11 @@ services:
       context: ./service2/
       dockerfile: Dockerfile.yaml
   service3:
-    build: 
+    build:
       context: ./service3/
       dockerfile: Dockerfile.yaml
   frontend:
+    image: frontend:latest
     build: 
       context: .
       dockerfile: Dockerfile.yaml
