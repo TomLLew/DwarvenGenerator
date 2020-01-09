@@ -1,0 +1,64 @@
+version: '3.7'
+services: 
+  nginx:
+    image: nginx:latest
+    container_name: ontainer_name: nginx
+    ports: 
+    - target: 80
+      published: 80
+      protocol: tcp
+    volumes: 
+    - type: bind
+      source: ./nginx.conf
+      target: /etc/nginx/nginx.conf
+    depends_on: 
+    - service1
+      service2
+      service3
+      frontend
+    service1:
+      build: ./service1
+      container_name: service1
+      dockerfile: ./service1/Dockerfile.yaml
+    service2: 
+      build: ./service2
+      container_name: service2
+      dockerfile: ./service2/Dockerfile.yaml
+    service3:
+      build: ./service3
+      container_name: service3
+      dockerfile: ./service3/Dockerfile.yaml
+    frontend:
+      build: ./frontend
+      container_name: frontend
+      dockerfile: .
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      '''service1:
+    image: service1
+    container_name: service1
+    build: ./service1
+  service2:
+    image: service2
+    container_name: service2
+    build: ./service2
+  service3:
+    image: service3
+    container_name: service3
+    build: ./service3
+  frontend:
+    image: frontend
+    container_name: frontend
+    build: ./frontend'''
+
