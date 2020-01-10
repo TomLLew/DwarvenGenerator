@@ -1,27 +1,27 @@
 version: '3.7'
 services: 
   service1:
-    image: service1:latest
+    image: 10.154.0.8:5000/service1:latest
     build: 
       context: ./service1/
       dockerfile: Dockerfile
   service2:
-    image: service2:latest 
+    image: 10.154.0.8:5000/service2:latest 
     build: 
       context: ./service2/
       dockerfile: Dockerfile
   service3:
-    image: service3:latest
+    image: 10.154.0.8:5000/service3:latest
     build:
       context: ./service3/
       dockerfile: Dockerfile
   frontend:
-    image: frontend:latest
+    image: 10.154.0.8:5000/frontend:latest
     build: 
       context: .
       dockerfile: Dockerfile
   nginx:
-    image: nginx:latest
+    image: 10.154.0.8:5000/nginx:latest
     container_name: nginx
     ports: 
     - target: 80
