@@ -21,7 +21,7 @@ services:
       context: .
       dockerfile: Dockerfile
   nginx:
-    image: 10.154.0.8:5000/nginx:latest
+    image: nginx:latest
     container_name: nginx
     ports: 
     - target: 80
