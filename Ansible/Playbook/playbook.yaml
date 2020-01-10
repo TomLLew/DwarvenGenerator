@@ -1,0 +1,12 @@
+
+- import_playbook: playbook-jenkins-install.yaml
+- import_playbook: playbook-jenkins-user.yaml
+- import_playbook: playbook-ssh-key.yaml
+- import_playbook: playbook-private-key.yaml
+- import_playbook: playbook-public-key.yaml
+- import_playbook: playbook-docker-install.yaml
+- import_playbook: playbook-docker-daemon.yaml
+- import_playbook: playbook-docker-registry.yaml
+- import_playbook: playbook-install-docker-compose.yaml
+- import_playbook: playbook-swarm-init.yaml
+- import_playbook: playbook-jenkins-admin-pass.yaml
