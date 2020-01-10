@@ -7,8 +7,8 @@ class GenderForm(FlaskForm):
     gender = SelectField('Select Gender',
         choices=[
             ('Female', 'Female'),
-             ('Male', 'Male')
-             ],
+            ('Male', 'Male')
+            ],
         )
 
     submit = SubmitField('Generate!')
