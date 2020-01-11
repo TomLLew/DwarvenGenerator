@@ -20,7 +20,6 @@
     docker_compose:
       project_src: /home/jenkins/DwarvenGenerator
       build: true
-    remote_user: jenkins
   - name: Deploy the stack
     docker_stack:
       state: present
