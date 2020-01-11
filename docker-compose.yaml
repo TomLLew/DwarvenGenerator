@@ -20,7 +20,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-  '''nginx:
+  nginx:
     image: nginx:latest
     ports: 
     - target: 80
@@ -29,7 +29,7 @@ services:
     volumes: 
     - type: bind
       source: ./nginx.conf
-      target: /etc/nginx/nginx.conf'''
+      target: /etc/nginx/nginx.conf
    
 
 

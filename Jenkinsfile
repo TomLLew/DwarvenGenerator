@@ -27,6 +27,7 @@ pipeline{
                                 sh ''' 
                                 cd ~
                                 cd DwarvenGenerator
+                                git checkout basic
                                 docker-compose up -d --build
                                 '''
                         }
