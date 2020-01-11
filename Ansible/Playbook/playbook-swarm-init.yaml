@@ -21,7 +21,9 @@
       project_src: /home/jenkins/DwarvenGenerator
       build: true
   - name: docker-compose down
-    shell: docker-compose down 
+    shell: |
+      cd DwarvenGenerator/
+      docker-compose down 
   - name: Deploy the stack
     docker_stack:
       state: present
