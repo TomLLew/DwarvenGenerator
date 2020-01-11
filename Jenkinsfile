@@ -25,7 +25,6 @@ pipeline{
                                 sh ''' 
                                 cd ~
                                 cd DwarvenGenerator
-                                git checkout basic
                                 docker-compose up -d --build
                                 '''
                         }
@@ -37,7 +36,6 @@ pipeline{
                                 cd DwarvenGenerator
                                 docker-compose down
                                 docker-compose push
-                                docker rmi -f $(docker images -a -q)
                                 '''
                         }
                 }
