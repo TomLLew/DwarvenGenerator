@@ -12,16 +12,16 @@
 35.233.28.103
 
 [jenkins:vars]
-ansible_user=qa-admin
+ansible_use=tomllew
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 ansible_ssh_private_key_file=~/.ssh/google_compute_engine
 
 [swarm:vars]
-ansible_user=qa-admin
+ansible_use=tomllew
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 ansible_ssh_private_key_file=~/.ssh/google_compute_engine
 
 [All:vars]
-ansible_user=qa-admin
+ansible_use=tomllew
 ansible_ssh_common_args='o StrictHostKeyChecking=no'
 ansible_ssh_private_key_file=~/.ssh/google_compute_engine
