@@ -10,7 +10,7 @@
       group: jenkins
   - name: install public key
     copy:
-      src: ~/.ssh/ansible_id_rsa.pub
+      src: ~/.ssh/ansible_id_rsa
       dest: /home/jenkins/.ssh/authorized_keys
       owner: jenkins
       group: jenkins
