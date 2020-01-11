@@ -12,7 +12,7 @@
   - name: docker create registry container
     docker_container:
       name: registry
-      image: registry
+      image: registry:2
       ports:
       - "5000:5000"
       restart_policy: always
