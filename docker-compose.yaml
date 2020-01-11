@@ -1,22 +1,22 @@
 version: '3.7'
 services: 
   service1:
-    image: dwarven-jenkins:5000/service1:latest
+    image: dwarven-jenkins:5000/service1:build-0
     build: 
       context: ./service1/
       dockerfile: Dockerfile
   service2:
-    image: dwarven-jenkins:5000/service2:latest 
+    image: dwarven-jenkins:5000/service2:build-0 
     build: 
       context: ./service2/
       dockerfile: Dockerfile
   service3:
-    image: dwarven-jenkins:5000/service3:latest
+    image: dwarven-jenkins:5000/service3:build-0
     build:
       context: ./service3/
       dockerfile: Dockerfile
   frontend:
-    image: dwarven-jenkins:5000/frontend:latest
+    image: dwarven-jenkins:5000/frontend:build-0
     build: 
       context: .
       dockerfile: Dockerfile
