@@ -2,26 +2,26 @@
 127.0.0.1
 
 [jenkins]
-35.246.39.247
+34.89.91.98
 
 [swarm]
-35.197.201.50
+34.89.0.224
 
 [All]
-35.246.39.247
-35.197.201.50
+34.89.91.98
+34.89.0.224
 
 [jenkins:vars]
-ansible_user=qa-admin
+ansible_use=tomllew
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 ansible_ssh_private_key_file=~/.ssh/google_compute_engine
 
 [swarm:vars]
-ansible_user=qa-admin
+ansible_use=tomllew
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 ansible_ssh_private_key_file=~/.ssh/google_compute_engine
 
 [All:vars]
-ansible_user=qa-admin
+ansible_use=tomllew
 ansible_ssh_common_args='o StrictHostKeyChecking=no'
 ansible_ssh_private_key_file=~/.ssh/google_compute_engine
