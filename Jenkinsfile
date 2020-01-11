@@ -35,7 +35,7 @@ pipeline{
                 stage('image push to registry'){
                         steps{
                                 sh '''
-                                cd~
+                                cd ~
                                 cd DwarvenGenerator
                                 docker-compose down
                                 docker-compose push
