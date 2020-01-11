@@ -22,8 +22,7 @@
       build: true
   - name: docker-compose down
     shell: |
-      cd ~
-      cd DwarvenGenerator/
+      cd /home/jenkins/DwarvenGenerator
       docker-compose down 
   - name: Deploy the stack
     docker_stack:
