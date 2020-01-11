@@ -4,6 +4,7 @@ pipeline{
         environment{
                 swarm_ip = "swarm-test"
                 git_repo = "https://github.com/TomLLew/DwarvenGenerator.git"
+                build = "${BUILD_NUMBER}"
         }
 
         stages{
@@ -11,16 +12,19 @@ pipeline{
                 stage('clone updated git repo'){
 
                         steps{
-                                sh ''' 
-                                sudo rm -rf DwarvenGenerator
+                                sh '''
+                                echo ${build}
+                                echo ${BUILD_NUMBER}
+                                cd~ 
+                                export BUILD_NUMBER=${BUILD_NUMBER}
                                 git clone ${git_repo}
                                 '''
                         }
                 }
                 stage('compose build'){
                         steps{
-                                sh '''
-                                export BUILD_NUMBER='${BUILD_NUMBER}'
+                                sh ''' 
+                                cd ~
                                 cd DwarvenGenerator
                                 docker-compose up -d --build
                                 '''
@@ -29,6 +33,7 @@ pipeline{
                 stage('image push to registry'){
                         steps{
                                 sh '''
+                                cd~
                                 cd DwarvenGenerator
                                 docker-compose down
                                 docker-compose push
