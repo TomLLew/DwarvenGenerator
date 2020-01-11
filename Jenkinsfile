@@ -15,7 +15,8 @@ pipeline{
                                 sh '''
                                 echo ${build}
                                 echo ${BUILD_NUMBER}
-                                cd~ 
+                                cd ~ 
+                                rm -rf DwarvenGenerator
                                 export BUILD_NUMBER=${BUILD_NUMBER}
                                 git clone ${git_repo}
                                 '''
