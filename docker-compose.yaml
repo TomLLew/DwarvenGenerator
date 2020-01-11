@@ -11,7 +11,7 @@ services:
       context: ./service2/
       dockerfile: Dockerfile
   service3:
-    image: dwarven-jenkins:5000/service3:build-{BUILD_NUMBER}
+    image: dwarven-jenkins:5000/service3:build-${BUILD_NUMBER}
     build:
       context: ./service3/
       dockerfile: Dockerfile
