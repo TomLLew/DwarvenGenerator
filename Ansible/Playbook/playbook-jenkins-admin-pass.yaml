@@ -1,7 +1,8 @@
 - hosts: jenkins
   become: true
   tasks:
-  - shell: |
+  - name: retrieving admin password for jenkins
+    shell: |
       chmod 777 /var/lib/jenkins/secrets/initialAdminPassword    
       cat /var/lib/jenkins/secrets/initialAdminPassword
     register: shell_result

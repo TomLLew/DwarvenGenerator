@@ -8,6 +8,8 @@
       owner: jenkins
       group: jenkins
       mode: u=rw,g=rw,o=
+
   - name: docker restart
-    service: docker
-    state: restarted
+    service: 
+      name: docker
+      state: restarted
