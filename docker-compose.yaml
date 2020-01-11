@@ -1,22 +1,22 @@
 version: '3.7'
 services: 
   service1:
-    image: jenkins-test:5000/service1:build-
+    image: jenkins-test:5000/service1:build-${BUILD_NUMBER}
     build: 
       context: ./service1/
       dockerfile: Dockerfile
   service2:
-    image: jenkins-test:5000/service2:build-
+    image: jenkins-test:5000/service2:build-${BUILD_NUMBER}
     build: 
       context: ./service2/
       dockerfile: Dockerfile
   service3:
-    image: jenkins-test:5000/service3:build-
+    image: jenkins-test:5000/service3:build-${BUILD_NUMBER}
     build:
       context: ./service3/
       dockerfile: Dockerfile
   frontend:
-    image: jenkins-test:5000/frontend:build-
+    image: jenkins-test:5000/frontend:build-${BUILD_NUMBER}
     build: 
       context: .
       dockerfile: Dockerfile
