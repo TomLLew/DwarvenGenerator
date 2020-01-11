@@ -13,8 +13,6 @@ pipeline{
 
                         steps{
                                 sh '''
-                                echo ${build}
-                                echo ${BUILD_NUMBER}
                                 cd ~ 
                                 rm -rf DwarvenGenerator
                                 export BUILD_NUMBER=${BUILD_NUMBER}
@@ -39,6 +37,7 @@ pipeline{
                                 cd DwarvenGenerator
                                 docker-compose down
                                 docker-compose push
+                                docker rmi -f $(docker images -a -q)
                                 '''
                         }
                 }
