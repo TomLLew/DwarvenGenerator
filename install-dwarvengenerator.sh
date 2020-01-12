@@ -14,4 +14,4 @@ git clone https://github.com/TomLLew/DwarvenGenerator.git
 cd DwarvenGenerator
 git checkout compose
 docker-compose up -d --build
-echo "Go to your vm ip, away you go!"
+echo "Go to your vm ip, dont forget to allow http and away you go!,"
