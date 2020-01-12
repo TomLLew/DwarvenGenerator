@@ -2,14 +2,14 @@
 127.0.0.1
 
 [jenkins]
-35.189.76.12
+jenkins-dwarvengenerator
 
 [swarm]
-35.197.201.50
+swarm-dwarvengenerator
 
 [All]
-35.189.76.12
-35.197.201.50
+jenkins-dwarvengenerator
+swarm-dwarvengenerator
 
 [jenkins:vars]
 ansible_use=tomllew
