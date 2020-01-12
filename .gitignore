@@ -8,3 +8,7 @@
 /service1/application/__pycache__/*
 /service2/application/__pycache__/*
 /service3/application/__pycache__/*
+/service1/tests/__pycache__/*
+/service2/tests/__pycache__/*
+/service3/tests/__pycache__/*
+tests/__pycache__/*
