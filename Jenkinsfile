@@ -25,7 +25,6 @@ pipeline{
                                 sh ''' 
                                 cd ~
                                 cd DwarvenGenerator
-                                git checkout basic
                                 docker-compose up -d --build
                                 '''
                         }
@@ -48,7 +47,6 @@ pipeline{
                                 docker service update --replicas 4 --image jenkins-dwarvengenerator:5000/service2:server-${BUILD_NUMBER} DwarvenGenerator_service2
                                 docker service update --replicas 4 --image jenkins-dwarvengenerator:5000/service3:server-${BUILD_NUMBER} DwarvenGenerator_service3
                                 docker service update --replicas 4 --image jenkins-dwarvengenerator:5000/frontend:server-${BUILD_NUMBER} DwarvenGenerator_frontend
-                                EOF
                                 '''
                         }
                 }
