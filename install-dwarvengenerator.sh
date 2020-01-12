@@ -9,6 +9,11 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 sudo usermod -aG docker $(whoami)
 sudo systemctl restart docker
+source ~/.bashrc
 git clone https://github.com/TomLLew/DwarvenGenerator.git
+cd DwarvenGenerator
 git checkout compose
+docker-compose up -d --build
+
+
 echo "restart your terminal!"
