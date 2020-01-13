@@ -4,6 +4,8 @@
 
 - [Introduction](#intro)
 
+- [Install](#install)
+
 - [Project Brief](#brief)
 
 - [My Solution](#solution)
@@ -25,6 +27,9 @@
 
 This will discuss the steps i took to produce my application for the second project i undertook at QA Academy.
 
+
+<a name="install"></a>
+## Install
 
 if you would like to give my application a go please follow these steps:
 
