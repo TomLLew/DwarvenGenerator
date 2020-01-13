@@ -32,7 +32,7 @@ if you would like to give my application a go please follow these steps:
 
 - copy the below piece of code and enter it into the terminal of the new vm
 
-### curl https://raw.githubusercontent.com/TomLLew/DwarvenGenerator/master/install-dwarvengenerator.sh | sudo bash
+```curl https://raw.githubusercontent.com/TomLLew/DwarvenGenerator/master/install-dwarvengenerator.sh | sudo bash```
 
 - to stop the application use docker-compose down
 
