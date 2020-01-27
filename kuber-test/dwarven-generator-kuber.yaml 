@@ -1,0 +1,104 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+	name: Frontend
+	labels:
+		app: Frontend
+spec:
+	replicas: 3
+	selector:
+		matchLabels:
+			app: Frontend
+	template:
+		metadata:
+			labels:
+				app: Frontend
+		spec:
+			containers:
+			- name: Frontend
+				image: jenkins-kuber:5000/frontend:build-0
+				ports:
+				- containerPort: 5000
+				readinessProbe:
+					httpGet:
+						path: /
+						port: 5000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+	name: service1
+	labels:
+		app: service1
+spec:
+	replicas: 3
+	selector:
+		matchLabels:
+			app: service1
+	template:
+		metadata:
+			labels:
+				app: service1
+		spec:
+			containers:
+			- name: service1
+				image: jenkins-kuber:5000/service1:build-0
+				ports:
+				- containerPort: 5000
+				readinessProbe:
+					httpGet:
+						path: /
+						port: 5000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+	name: service2
+	labels:
+		app: service2
+spec:
+	replicas: 3
+	selector:
+		matchLabels:
+			app: service2
+	template:
+		metadata:
+			labels:
+				app: service2
+		spec:
+			containers:
+			- name: service2
+				image: jenkins-kuber:5000/service2:build-0
+				ports:
+				- containerPort: 5000
+				readinessProbe:
+					httpGet:
+						path: /
+						port: 5000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+	name: service3
+	labels:
+		app: service3
+spec:
+	replicas: 3
+	selector:
+		matchLabels:
+			app: service3
+	template:
+		metadata:
+			labels:
+				app: service3
+		spec:
+			containers:
+			- name: service3
+				image: jenkins-kuber:5000/service3:build-0
+				ports:
+				- containerPort: 5000
+				readinessProbe:
+					httpGet:
+						path: /
+						port: 5000
+

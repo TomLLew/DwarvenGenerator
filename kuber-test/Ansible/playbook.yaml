@@ -1,0 +1,7 @@
+- import_playbook: playbook-jenkins-install.yaml
+- import_playbook: playbook-jenkins-user.yaml
+- import_playbook: playbook-docker-install.yaml
+- import_playbook: playbook-docker-compose.yaml
+- import_playbook: playbook-docker-daemon.yaml
+- import_playbook: playbook-docker-registry.yaml
+- import_playbook: playbook-jenkins-adminpass.yaml
