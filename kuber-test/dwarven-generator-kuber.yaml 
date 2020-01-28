@@ -1,6 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+	name: nginx
+	labels:
+		app: nginx
+spec:
+	replicas: 3
+	selector:
+		matchLabels:
+			app: nginx
+	template:
+		metadata:
+			labels:
+				app: nginx
+		spec:
+			containers:
+			- name: nginx
+				image: nginx:alpine
+				ports:
+				- containerPort: 80
+				readinessProbe:
+					httpGet:
+						path: /
+						port: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
 	name: Frontend
 	labels:
 		app: Frontend
@@ -44,11 +70,11 @@ spec:
 			- name: service1
 				image: jenkins-kuber:5000/service1:build-0
 				ports:
-				- containerPort: 5000
+				- containerPort: 5001
 				readinessProbe:
 					httpGet:
 						path: /
-						port: 5000
+						port: 5001
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -70,11 +96,11 @@ spec:
 			- name: service2
 				image: jenkins-kuber:5000/service2:build-0
 				ports:
-				- containerPort: 5000
+				- containerPort: 5002
 				readinessProbe:
 					httpGet:
 						path: /
-						port: 5000
+						port: 5002
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -96,9 +122,22 @@ spec:
 			- name: service3
 				image: jenkins-kuber:5000/service3:build-0
 				ports:
-				- containerPort: 5000
+				- containerPort: 5003
 				readinessProbe:
 					httpGet:
 						path: /
-						port: 5000
-
+						port: 5003
+---
+apiVersion: v1
+kind: Service
+metadata:
+	name: nginx				
+spec:
+	selector:
+		app: nginx
+	ports:
+	- protocol: TCP
+		port: 80
+		targetPort: 80
+	type: LoadBalancer
+	  
