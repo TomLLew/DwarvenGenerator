@@ -3,7 +3,8 @@ kind: Deployment
 metadata:
   name: nginx
   labels:
-    app: nginx
+    app: application
+
 spec:
   replicas: 1
   selector:
@@ -52,7 +53,7 @@ kind: Deployment
 metadata:
   name: frontend
   labels:
-    app: frontend
+    app: application
 spec:
   replicas: 1
   selector:
