@@ -27,21 +27,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Frontend
+  name: frontend
   labels:
-    app: Frontend
+    app: frontend
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: Frontend
+      app: frontend
   template:
     metadata:
       labels:
-        app: Frontend
+        app: frontend
     spec:
       containers:
-      - name: Frontend
+      - name: frontend
         image: jenkins-kuber:5000/frontend:build-0
         ports:
         - containerPort: 5000
