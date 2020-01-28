@@ -55,8 +55,8 @@ kind: Deployment
 metadata:
   name: frontend
   labels:
-    app: application
-    tier: frontend
+    app: frontend
+    
 spec:
   replicas: 1
   selector:
@@ -65,9 +65,8 @@ spec:
   template:
     metadata:
       labels:
-        app: application
-        tier: frontend
-        track: stable
+        app: frontend
+        
     spec:
       containers:
       - name: frontend
