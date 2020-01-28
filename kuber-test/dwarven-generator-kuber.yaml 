@@ -71,8 +71,12 @@ spec:
       containers:
       - name: frontend
         image: jenkins-kuber:5000/frontend:build-0
-        
-        
+        ports:
+        - containerPort: 5000
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 5000
 ---
 apiVersion: v1
 kind: Service
