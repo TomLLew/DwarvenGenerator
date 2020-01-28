@@ -46,8 +46,7 @@ pipeline{
                                 export BUILD_NUMBER=${BUILD_NUMBER}
                                 cd ~
                                 cd DwarvenGenerator/kuber-test/
-                                git checkout kuber
-                                kubectl apply -f dwarven-generator-kuber.yaml
+                                kubectl apply -f dwarven-generator-kuber.yaml\
                                 '''
                         }
                 }
