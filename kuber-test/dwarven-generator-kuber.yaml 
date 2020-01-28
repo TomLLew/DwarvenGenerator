@@ -1,143 +1,143 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-	name: nginx
-	#labels:
-	#	app: nginx
+  name: nginx
+  labels:
+    app: nginx
 spec:
-	replicas: 3
-	selector:
-		matchLabels:
-			app: nginx
-	template:
-		metadata:
-			labels:
-				app: nginx
-		spec:
-			containers:
-			- name: nginx
-				image: nginx:alpine
-				ports:
-				- containerPort: 80
-				readinessProbe:
-					httpGet:
-						path: /
-						port: 80
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-	name: Frontend
-	labels:
-		app: Frontend
+  name: Frontend
+  labels:
+    app: Frontend
 spec:
-	replicas: 3
-	selector:
-		matchLabels:
-			app: Frontend
-	template:
-		metadata:
-			labels:
-				app: Frontend
-		spec:
-			containers:
-			- name: Frontend
-				image: jenkins-kuber:5000/frontend:build-0
-				ports:
-				- containerPort: 5000
-				readinessProbe:
-					httpGet:
-						path: /
-						port: 5000
+  replicas: 3
+  selector:
+    matchLabels:
+      app: Frontend
+  template:
+    metadata:
+      labels:
+        app: Frontend
+    spec:
+      containers:
+      - name: Frontend
+        image: jenkins-kuber:5000/frontend:build-0
+        ports:
+        - containerPort: 5000
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 5000
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-	name: service1
-	labels:
-		app: service1
+  name: service1
+  labels:
+    app: service1
 spec:
-	replicas: 3
-	selector:
-		matchLabels:
-			app: service1
-	template:
-		metadata:
-			labels:
-				app: service1
-		spec:
-			containers:
-			- name: service1
-				image: jenkins-kuber:5000/service1:build-0
-				ports:
-				- containerPort: 5001
-				readinessProbe:
-					httpGet:
-						path: /
-						port: 5001
+  replicas: 3
+  selector:
+    matchLabels:
+      app: service1
+  template:
+    metadata:
+      labels:
+        app: service1
+    spec:
+      containers:
+      - name: service1
+        image: jenkins-kuber:5000/service1:build-0
+        ports:
+        - containerPort: 5001
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 5001
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-	name: service2
-	labels:
-		app: service2
+  name: service2
+  labels:
+    app: service2
 spec:
-	replicas: 3
-	selector:
-		matchLabels:
-			app: service2
-	template:
-		metadata:
-			labels:
-				app: service2
-		spec:
-			containers:
-			- name: service2
-				image: jenkins-kuber:5000/service2:build-0
-				ports:
-				- containerPort: 5002
-				readinessProbe:
-					httpGet:
-						path: /
-						port: 5002
+  replicas: 3
+  selector:
+    matchLabels:
+      app: service2
+  template:
+    metadata:
+      labels:
+        app: service2
+    spec:
+      containers:
+      - name: service2
+        image: jenkins-kuber:5000/service2:build-0
+        ports:
+        - containerPort: 5002
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 5002
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-	name: service3
-	labels:
-		app: service3
+  name: service3
+  labels:
+    app: service3
 spec:
-	replicas: 3
-	selector:
-		matchLabels:
-			app: service3
-	template:
-		metadata:
-			labels:
-				app: service3
-		spec:
-			containers:
-			- name: service3
-				image: jenkins-kuber:5000/service3:build-0
-				ports:
-				- containerPort: 5003
-				readinessProbe:
-					httpGet:
-						path: /
-						port: 5003
+  replicas: 3
+  selector:
+    matchLabels:
+      app: service3
+  template:
+    metadata:
+      labels:
+        app: service3
+    spec:
+      containers:
+      - name: service3
+        image: jenkins-kuber:5000/service3:build-0
+        ports:
+        - containerPort: 5003
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 5003
 ---
 apiVersion: v1
 kind: Service
 metadata:
-	name: nginx				
+  name: nginx				
 spec:
-	selector:
-		app: nginx
-	ports:
-	- protocol: TCP
-		port: 80
-		targetPort: 80
-	type: LoadBalancer
-	  
+  selector:
+    app: nginx
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
+    
