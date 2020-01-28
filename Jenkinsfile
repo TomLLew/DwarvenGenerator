@@ -2,7 +2,6 @@ pipeline{
 
         agent any
         environment{
-                swarm_ip = "swarm-dwarvengenerator"
                 git_repo = "https://github.com/TomLLew/DwarvenGenerator.git"
                 build = "${BUILD_NUMBER}"
         }
@@ -25,7 +24,7 @@ pipeline{
                                 sh ''' 
                                 cd ~
                                 cd DwarvenGenerator
-                                git checkout basic
+                                git checkout kuber
                                 docker-compose up -d --build
                                 '''
                         }
@@ -41,15 +40,13 @@ pipeline{
                                 '''
                         }
                 }
-                stage('service update'){
-                steps{
-                        sh '''ssh ${swarm_ip} << EOF
-                                export BUILD_NUMBER='${BUILD_NUMBER}'
-                                docker service update --replicas 4 --image jenkins-dwarvengenerator:5000/service1:server-${BUILD_NUMBER} DwarvenGenerator_service1
-                                docker service update --replicas 4 --image jenkins-dwarvengenerator:5000/service2:server-${BUILD_NUMBER} DwarvenGenerator_service2
-                                docker service update --replicas 4 --image jenkins-dwarvengenerator:5000/service3:server-${BUILD_NUMBER} DwarvenGenerator_service3
-                                docker service update --replicas 4 --image jenkins-dwarvengenerator:5000/frontend:server-${BUILD_NUMBER} DwarvenGenerator_frontend
-                                EOF
+                stage('kubectl service update'){
+                        steps{
+                                sh '''
+                                export BUILD_NUMBER=${BUILD_NUMBER}
+                                cd ~
+                                cd DwarvenGenerator/kuber-test/
+                                kubectl apply -f dwarven-generator-kuber.yaml
                                 '''
                         }
                 }

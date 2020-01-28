@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: jenkins-kuber:5000/frontend:build-0
+        image: jenkins-kuber:5000/frontend:build-${BUILD_NUMBER}
         ports:
         - containerPort: 5000
         readinessProbe:
@@ -58,7 +58,7 @@ spec:
     spec:
       containers:
       - name: service1
-        image: jenkins-kuber:5000/service1:build-0
+        image: jenkins-kuber:5000/service1:build-${BUILD_NUMBER}
         ports:
         - containerPort: 5001
         
@@ -94,7 +94,7 @@ spec:
     spec:
       containers:
       - name: service2
-        image: jenkins-kuber:5000/service2:build-0
+        image: jenkins-kuber:5000/service2:build-${BUILD_NUMBER}
         ports:
         - containerPort: 5002
         
@@ -130,7 +130,7 @@ spec:
     spec:
       containers:
       - name: service3
-        image: jenkins-kuber:5000/service3:build-0
+        image: jenkins-kuber:5000/service3:build-${BUILD_NUMBER}
         ports:
         - containerPort: 5003
         
