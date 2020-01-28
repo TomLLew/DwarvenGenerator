@@ -36,7 +36,7 @@ pipeline{
                                 cd DwarvenGenerator
                                 docker-compose down
                                 docker-compose push
-                                docker rmi -f $(docker images -a -q)
+                                docker system prune -f
                                 '''
                         }
                 }
