@@ -1,52 +1,54 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: nginx
-  labels:
-    app: application
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  name: nginx
+#  labels:
+#    app: application
+#    tier: 
 
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: application
-      tier: nginx
-      track: stable
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:latest
-        volumeMounts:
-        - name: nginx-conf
-          mountPath: /etc/nginx/
-        ports:
-        - containerPort: 80
-      volumes:
-      - name: nginx-conf
-        configMap:
-          name: nginx-conf
-          items:
-          - key: nginx.conf
-            path: nginx.conf
+#spec:
+#  replicas: 1
+#  selector:
+#    matchLabels:
+#      app: application
+#      tier: nginx
+#      track: stable
+#  template:
+#    metadata:
+#      labels:
+#        app: application
+#        tier: nginx
+#    spec:
+#      containers:
+#      - name: nginx
+#        image: nginx:latest
+#        volumeMounts:
+#        - name: nginx-conf
+#          mountPath: /etc/nginx/
+#        ports:
+#        - containerPort: 80
+#      volumes:
+#      - name: nginx-conf
+##        configMap:
+#         name: nginx-conf
+#          items:
+#          - key: nginx.conf
+#            path: nginx.conf
             
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx				
-spec:
-  selector:
-    app: application
-    tier: nginx
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
-  type: LoadBalancer
+#---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: nginx				
+#spec:
+#  selector:
+#    app: application
+#    tier: nginx
+#  ports:
+#  - protocol: TCP
+#    port: 80
+#    targetPort: 80
+#  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -54,6 +56,7 @@ metadata:
   name: frontend
   labels:
     app: application
+    tier: frontend
 spec:
   replicas: 1
   selector:
@@ -87,8 +90,8 @@ spec:
   ports:
   - protocol: TCP
     port: 80
-    targetPort: http
-#  type: ClusterIP
+    targetPort: 5000
+  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
