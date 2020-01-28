@@ -2,7 +2,7 @@
 127.0.0.1
 
 [jenkins]
-35.246.68.29 
+34.89.85.252  
 
 [jenkins:vars]
 ansible_use=tomllew

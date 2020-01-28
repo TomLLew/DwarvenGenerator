@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:alpine
+        image: jenkins-kuber:5000/nginx:latest
         ports:
         - containerPort: 80
         readinessProbe:
