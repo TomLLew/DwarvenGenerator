@@ -84,8 +84,8 @@ metadata:
   name: frontend				
 spec:
   selector:
-    app: application
-    tier: frontend
+    app: frontend
+    
   ports:
   - protocol: TCP
     port: 80
