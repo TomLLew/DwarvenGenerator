@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nginx
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
@@ -44,7 +44,7 @@ metadata:
   labels:
     app: frontend
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: frontend
@@ -83,7 +83,7 @@ metadata:
   labels:
     app: service1
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: service1
@@ -119,7 +119,7 @@ metadata:
   labels:
     app: service2
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: service2
@@ -155,7 +155,7 @@ metadata:
   labels:
     app: service3
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: service3
